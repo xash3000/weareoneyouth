@@ -1,5 +1,5 @@
 <header
-  class="header {{ if site.Params.navbar_fixed }}sticky top-0{{ end }} z-30">
+  class="header {{ if site.Params.navbar_fixed }}fixed top-0{{ end }} z-30 w-screen">
   <nav class="navbar container">
     <!-- logo -->
     <div class="order-0">
@@ -123,7 +123,7 @@
       {{ end }}
 
       {{ partial "components/language-switcher" (dict "Context" . "Class" "mr-5 pl-2 py-1  rounded") }}
-      
+
 
 
       <!-- navigation btn -->

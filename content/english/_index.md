@@ -1,13 +1,14 @@
 ---
 # Banner
 banner:
-  title: "The Ultimate Starter Template You Need To Start Your Hugo Project"
-  content: "Hugoplate is a free starter template built with Hugo and TailwindCSS, providing everything you need to jumpstart your Hugo project and save valuable time."
-  image: "/images/banner.png"
+  title: "We Are One International Youth"
+  subtitle: "Different Cultures, Shared Future"
+  content: "We unite young leaders to promote diversity, responsibility, and a sustainable future"
+  image: "/images/headerbg.jpeg"
   button:
     enable: true
-    label: "Get Started For Free"
-    link: "https://github.com/zeon-studio/hugoplate"
+    label: "Learn More About Us"
+    link: "#about"
 
 # Features
 features:

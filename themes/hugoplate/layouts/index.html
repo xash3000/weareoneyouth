@@ -1,16 +1,24 @@
 {{ define "main" }}
   <!-- Banner -->
   {{ with .Params.banner }}
-    <section class="section pt-14">
+  <section
+    class="section relative flex justify-center items-center pt-14 bg-center bg-cover bg-gray-50/10 h-screen"
+    style="background-image:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('{{ (resources.Get "images/headerbg.jpeg").RelPermalink }}')">
       <div class="container">
         <div class="row justify-center">
           <div class="lg:col-7 md:col-9 mb-8 text-center">
-            <h1 class="mb-4 text-h3 lg:text-h1">
+            <h1 class="mb-4 text-h3 lg:text-h1 text-white">
               {{ .title | markdownify }}
             </h1>
-            <p class="mb-8">
+
+            <h3 class="mb-4 text-h3 lg:text-h3 text-white">
+              {{ .subtitle | markdownify }}
+            </h3>
+
+            <h6 class="mb-8 text-h6 lg:text-h6 text-white">
               {{ .content | markdownify }}
-            </p>
+            </h6>
+
             {{ with .button }}
               {{ if .enable }}
                 <a
@@ -20,13 +28,10 @@
                     target="_blank" rel="noopener"
                   {{ end }}>
                   {{ .label }}
-                  <i class="fa fa-arrow-right pl-2"></i>
+                  <i class="fa fa-arrow-down pl-2"></i>
                 </a>
               {{ end }}
             {{ end }}
-          </div>
-          <div class="col-12">
-            {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:!max-w-[800px]" "DisplayXL" "800x" ) }}
           </div>
         </div>
       </div>
