@@ -10,6 +10,14 @@ banner:
     label: "Learn More About Us"
     link: "#about"
 
+# About
+about:
+  title: "Who Are We?"
+  content: "We Are One International Youth Platform was founded in 2022 at Bursa Uludağ University, emerging from a multicultural community. Our aim is to support the personal development of young people, encourage them to contribute to society as global citizens, promote intercultural dialogue, and involve them in social responsibility projects."
+  image: "/images/headerbg.jpeg"
+  mission: "mission"
+  vision: "vision"
+ 
 # Features
 features:
   - title: "What's Included in Hugoplate"

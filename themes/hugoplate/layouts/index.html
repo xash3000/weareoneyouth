@@ -2,8 +2,8 @@
   <!-- Banner -->
   {{ with .Params.banner }}
   <section
-    class="section relative flex justify-center items-center pt-14 bg-center bg-cover bg-gray-50/10 h-screen"
-    style="background-image:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('{{ (resources.Get "images/headerbg.jpeg").RelPermalink }}')">
+    class="section relative flex justify-center items-center pt-14 bg-center bg-cover h-screen"
+    style="background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ (resources.Get .image ).RelPermalink }}')">
       <div class="container">
         <div class="row justify-center">
           <div class="lg:col-7 md:col-9 mb-8 text-center">
@@ -39,49 +39,29 @@
   {{ end }}
   <!-- /Banner -->
 
-  <!-- Features -->
-  {{ range $i, $e:= .Params.features }}
-    <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
+  <!-- About -->
+  {{ with .Params.about }}
+    <section class="section-sm bg-gradient m-0" #about>
       <div class="container">
         <div class="row items-center justify-between">
           <div
-            class="mb:md-0 {{ if not (modBool $i 2) }}
-              md:order-2
-            {{ end }} md:col-5 mb-6">
+            class="mb:md-0 md:col-5 mb-6">
             {{ partial "image" (dict "Src" .image "Alt" "feature image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
           </div>
           <div
-            class="{{ if not (modBool $i 2) }}
-              md:order-1
-            {{ end }} md:col-7 lg:col-6">
+            class="md:col-7 lg:col-6">
             <h2 class="mb-4">
               {{ .title | markdownify }}
             </h2>
             <p class="mb-8 text-lg">
               {{ .content | markdownify }}
             </p>
-            <ul>
-              {{ range .bulletpoints }}
-                <li class="relative mb-4 pl-6">
-                  <i class="fa fa-check absolute left-0 top-1.5"></i>
-                  {{ . | markdownify }}
-                </li>
-              {{ end }}
-            </ul>
-            {{ with .button }}
-              {{ if .enable }}
-                <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
-                  {{ .label }}
-                  <i class="fa fa-arrow-right pl-2"></i>
-                </a>
-              {{ end }}
-            {{ end }}
           </div>
         </div>
       </div>
     </section>
   {{ end }}
-  <!-- /Features -->
+  <!-- /About -->
 
   <!-- Testimonials -->
   {{ with site.GetPage "sections/testimonial" }}
