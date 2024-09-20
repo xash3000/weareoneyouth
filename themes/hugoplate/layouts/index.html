@@ -41,19 +41,21 @@
 
   <!-- About -->
   {{ with .Params.about }}
-    <section class="section-sm bg-gradient m-0" #about>
+    <section class="section-sm bg-gradient m-0 py-2" id="about">
       <div class="container">
         <div class="row items-center justify-between">
-          <div
-            class="mb:md-0 md:col-5 mb-6">
+          <div class="mb:md-0 md:col-5 mb-6">
+            <!--
             {{ partial "image" (dict "Src" .image "Alt" "feature image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
+            -->
+            <img src="{{ .image }}" alt="who are we image" class="rounded-lg">
           </div>
           <div
             class="md:col-7 lg:col-6">
             <h2 class="mb-4">
               {{ .title | markdownify }}
             </h2>
-            <p class="mb-8 text-lg">
+            <p class="mb-8 text-lg text-justify">
               {{ .content | markdownify }}
             </p>
           </div>
@@ -62,6 +64,33 @@
     </section>
   {{ end }}
   <!-- /About -->
+
+  <!-- Mission And Vision -->
+
+  {{ with .Params.missionvision}}
+
+  <section class="section py-0">
+    <div class="container flex flex-col xl:flex-row lg:flex-row md:flex-col sm:flex-col gap-4">
+      <div class="bg-theme-light basis-1/2 rounded-lg px-4 pb-10 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+        <div class="mt-11 flex flex-col items-center">
+          <h2 class="text-white">{{ .mission_title }}</h2>
+          <p class="text-white text-justify">
+            {{ .mission | markdownify }}
+          </p>
+        </div>
+      </div>
+      <div class="bg-theme-light basis-1/2 rounded-lg px-4 pb-10 bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
+        <div class="mt-11 flex flex-col items-center">
+          <h2 class="text-white">{{ .vision_title }}</h2>
+          <p class="text-white text-justify">
+            {{ .vision | markdownify }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+  <!-- /Mission And Vision -->
 
   <!-- Testimonials -->
   {{ with site.GetPage "sections/testimonial" }}
