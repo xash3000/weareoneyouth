@@ -126,11 +126,11 @@
               </ul>
             </div>
           </div>
-          <a
+          {{/*  <a
             href="/projects"
             class="btn btn-outline-primary self-center">
             Our Projects In Detail
-          </a>
+          </a>  */}}
         </div>
       </div>
     </div>
@@ -162,10 +162,10 @@
 
 
   {{ with .Params.contact }}
-  <section class="flex flex-col section py-0" id="contact"></section>
+  <section class="flex flex-col section py-0" id="contact">
     <h2 class="mb-4 text-center">Contact Us</h2>
-    <div class="container flex flex-col xl:flex-row lg:flex-row md:flex-col sm:flex-col gap-4">
-      <div class="bg-theme-light basis-1/2 rounded-lg px-4 pb-10">
+    <div class="container flex flex-col xl:flex-row lg:flex-row md:flex-col sm:flex-col content-center justify-center">
+      <div class="bg-theme-light rounded-lg px-24 pb-10">
         <div class="mt-11 flex flex-col items-center">
           <h2 class="text-dark">Contact Information</h2>
           <h4 class="my-4">Email</h4>
@@ -188,18 +188,6 @@
               {{ end }}
             </ul>
           </div>
-        </div>
-      </div>
-      <div class="bg-theme-light basis-1/2 rounded-lg px-4 pb-10">
-        <div class="mt-11 flex flex-col items-center">
-          <h2 class="text-dark mb-4">Send A Message</h2>
-          <form class="flex flex-col w-full px-4 gap-4">
-              <input type="text" name="fullname" id="fullname" placeholder="Full Name">
-              <input type="email" name="email" id="email" placeholder="Your Email">
-              <textarea name="message" id="message" placeholder="Your Message" rows="4"></textarea>
-
-              <button type="submit" class="btn btn-primary">Send</button>
-          </form>
         </div>
       </div>
     </div>
