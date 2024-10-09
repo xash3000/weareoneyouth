@@ -1,33 +1,33 @@
-############# English navigation ##############
+############# Turkish navigation ##############
 
 # main menu
 [[main]]
-name = "Home"
+name = "Anasayfa"
 url = "/"
 weight = 1
 
 [[main]]
-name = "About Us"
+name = "Hakkımızda"
 url = "/#about"
 weight = 2
 
 [[main]]
-name = "Projects"
+name = "Projeler"
 url = "/#projects"
 weight = 3
 
 [[main]]
-name = "Join Us"
+name = "Bize katılın"
 url = "/#join"
 weight = 4
 
 [[main]]
-name = "Events"
+name = "Faaliyetler"
 url = "https://www.instagram.com/weareoneintyouth" # TODO: change to events page
 weight = 5
 
 [[main]]
-name = "Contact Us"
+name = "Bize Ulaşın"
 url = "/#contact"
 weight = 6
 

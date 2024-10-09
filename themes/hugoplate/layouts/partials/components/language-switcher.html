@@ -6,6 +6,9 @@
 {{ $siteLanguages := site.Home.AllTranslations }}
 {{ $pageLink := replace (replace $context.RelPermalink (add $pageLang "/") "") $base.Path "/" }}
 
+<div class="mx-5 text-4xl">
+🌎
+</div>
 {{ if $context.IsTranslated }}
   <select class="{{ $class }}" onchange="location = this.value">
     {{ range $siteLanguages }}

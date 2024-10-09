@@ -23,8 +23,45 @@ missionvision:
   vision_title: "Our Vision 🚀"
   vision: "Our vision is to create a global youth movement that promotes intercultural dialogue, tolerance, and solidarity. We aim to raise leaders who advocate for peace, sustainable development, and actively contribute to society."
 
+# Projects 
+projects_title: "Our Projects"
+projects_description: "We lead various projects that involve young people in contributing to society and the environment."
+
+cultural_exchange_title: "Cultural Exchange Programs"
+cultural_exchange_items:
+  - "School Visits"
+  - "Workshops"
+  - "Model United Nations (MUN)"
+
+youth_development_title: "Youth Development Initiatives"
+youth_development_items:
+  - "Leadership Training Programs"
+  - "Entrepreneurship Workshops"
+  - "Mentorship and Peer Support Programs"
+
+social_responsibility_title: "Social Responsibility Projects"
+social_responsibility_items:
+  - "Positive Impact Activities"
+  - "Library Establishments"
+  - "Environmental Clean-Up and Tree Planting Campaigns"
+  - "Elderly Care Home Visits"
+
+# Join us
+join_us_title: "Join Us"
+join_us_description: "Join the global youth movement! By becoming part of We Are One, you can:"
+join_us_benefits:
+  - "Discover new cultures and broaden your worldview 🌍"
+  - "Participate in social responsibility projects and make a positive impact on society 🤝"
+  - "Develop leadership skills and become one of the future leaders of the world 🌟"
+join_us_button: "Join Us Now"
+
 # Contact
 contact:
+  title: "Contact Us"
+  info_title: "Contact Information"
+  email_label: "Email"
+  phone_label: "Phone Number"
+  social_label: "Social Media"
   email: "contact@weareoneintyouth.org"
   phone: "+905938492929"
 ---
