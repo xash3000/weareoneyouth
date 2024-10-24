@@ -30,14 +30,15 @@ projects_description: "We lead various projects that involve young people in con
 cultural_exchange_title: "Cultural Exchange Programs"
 cultural_exchange_items:
   - "School Visits"
-  - "Workshops"
-  - "Model United Nations (MUN)"
+  - "Cultural Workshops"
+  - "Cultural Meetings"
 
 youth_development_title: "Youth Development Initiatives"
 youth_development_items:
   - "Leadership Training Programs"
   - "Entrepreneurship Workshops"
   - "Mentorship and Peer Support Programs"
+  - "Model United Nations (MUN)"
 
 social_responsibility_title: "Social Responsibility Projects"
 social_responsibility_items:
@@ -62,6 +63,6 @@ contact:
   email_label: "Email"
   phone_label: "Phone Number"
   social_label: "Social Media"
-  email: "contact@weareoneintyouth.org"
-  phone: "+905938492929"
+  email: "weareoneintyouth@gmail.com"
+  phone: "+9055101105 99"
 ---

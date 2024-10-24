@@ -30,14 +30,15 @@ projects_description: "Gençlerin topluma ve çevreye katkıda bulunmalarını s
 cultural_exchange_title: "Kültürel Değişim Programları"
 cultural_exchange_items:
   - "Okul Ziyaretleri"
-  - "Atölyeler"
-  - "Birleşmiş Milletler Modeli (MUN)"
+  - "Kültürlel Atölyeler"
+  - "Kültürel Buluşmalar"
 
 youth_development_title: "Gençlik Gelişim Girişimleri"
 youth_development_items:
   - "Liderlik Eğitim Programları"
   - "Girişimcilik Atölyeleri"
   - "Mentorluk ve Akran Destek Programları"
+  - "Birleşmiş Milletler Modeli (MUN)"
 
 social_responsibility_title: "Sosyal Sorumluluk Projeleri"
 social_responsibility_items:

@@ -1,11 +1,6 @@
 {
   "main": [
     {
-      "name": "twitter",
-      "icon": "fa-brands fa-twitter",
-      "link": "https://twitter.com/weareoneintyouth"
-    },
-    {
       "name": "instagram",
       "icon": "fa-brands fa-instagram",
       "link": "https://instagram.com/weareoneintyouth"
