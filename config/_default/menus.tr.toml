@@ -27,9 +27,14 @@ url = "https://www.instagram.com/weareoneintyouth" # TODO: change to events page
 weight = 5
 
 [[main]]
+name = "Fotoğraf Galerisi"
+url = "/tr/gallery"
+weight = 6
+
+[[main]]
 name = "Bize Ulaşın"
 url = "/#contact"
-weight = 6
+weight = 7
 
 # footer menu
 [[footer]]
