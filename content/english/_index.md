@@ -23,9 +23,11 @@ missionvision:
   vision_title: "Our Vision 🚀"
   vision: "Our vision is to create a global youth movement that promotes intercultural dialogue, tolerance, and solidarity. We aim to raise leaders who advocate for peace, sustainable development, and actively contribute to society."
 
-# Projects 
+# Projects
 projects_title: "Our Projects"
 projects_description: "We lead various projects that involve young people in contributing to society and the environment."
+gallery_link: "/gallery"
+gallery_button: "Browse our photo gallery 📸"
 
 cultural_exchange_title: "Cultural Exchange Programs"
 cultural_exchange_items:

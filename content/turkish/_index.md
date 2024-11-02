@@ -27,6 +27,9 @@ missionvision:
 projects_title: "Projelerimiz"
 projects_description: "Gençlerin topluma ve çevreye katkıda bulunmalarını sağlayan çeşitli projelere öncülük ediyoruz."
 
+gallery_link: "/tr/gallery"
+gallery_button: "Fotoğraf galerimizi inceleyin 📸"
+
 cultural_exchange_title: "Kültürel Değişim Programları"
 cultural_exchange_items:
   - "Okul Ziyaretleri"
