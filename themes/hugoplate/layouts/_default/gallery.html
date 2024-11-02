@@ -7,7 +7,7 @@
       {{ $images := readDir "assets/images/gallery" }}
       {{ range $images }}
         {{ $image := resources.Get (printf "images/gallery/%s" .Name) }}
-        {{ $resized := $image.Fit "300x200" }}
+        {{ $resized := $image.Fit "600x600" }}
         <div class="gallery-item">
           <a
             href="{{ $image.Permalink }}"
