@@ -4,7 +4,7 @@ banner:
   title: "Biz Biriz Uluslararası Gençlik Platformu"
   subtitle: "Farklı Kültürler, Ortak Gelecek"
   content: "Genç liderleri çeşitliliği, sorumluluğu ve sürdürülebilir bir geleceği teşvik etmek için bir araya getiriyoruz"
-  image: "/images/headerbg.jpeg"
+  image: "/images/headerbg2.jpeg"
   button:
     enable: true
     label: "Hakkımızda Daha Fazla Bilgi Edinin"
@@ -14,7 +14,7 @@ banner:
 about:
   title: "Biz Kimiz?"
   content: "Biz Biriz Uluslararası Gençlik Platformu, 2022 yılında Bursa Uludağ Üniversitesi'nde bir topluluğun bir araya gelmesiyle kuruldu. Amacımız, gençlerin kişisel gelişimlerini desteklemek, onları küresel vatandaşlar olarak topluma katkı sağlamaya teşvik etmek, kültürlerarası diyaloğu teşvik etmek ve sosyal sorumluluk projelerine dahil etmektir. Çeşitli etkinlikler, atölyeler ve işbirlikçi girişimler aracılığıyla Biz Biriz, farklı kültürel geçmişlerden gelen gençlerin fikir ve bakış açılarını paylaşabilecekleri kapsayıcı bir ortam sağlar. Katılımcılar eğitim ve liderlik programlarına katılarak sadece becerilerini geliştirmekle kalmaz, aynı zamanda birliğin ve karşılıklı anlayışın savunucuları olarak değişimin elçileri olurlar. Platform, gençleri hem yerel hem de uluslararası topluluklara olumlu etkiler yapma fırsatlarıyla buluşturan bir köprü işlevi görmektedir."
-  image: "/images/headerbg.jpeg"
+  image: "/images/headerbg2.jpeg"
 
 # Mission and Vision
 missionvision:
@@ -52,7 +52,7 @@ social_responsibility_items:
 
 # Join us
 join_us_title: "Bize Katılın"
-join_us_description: "Küresel gençlik hareketine katılın! We Are One'un bir parçası olarak şunları yapabilirsiniz:"
+join_us_description: "Küresel gençlik hareketine katılın! Biz Biriz'in bir parçası olarak şunları yapabilirsiniz:"
 join_us_benefits:
   - "Yeni kültürler keşfedin ve dünya görüşünüzü genişletin 🌍"
   - "Sosyal sorumluluk projelerine katılın ve topluma olumlu bir katkı yapın 🤝"
@@ -66,6 +66,6 @@ contact:
   email_label: "E-posta"
   phone_label: "Telefon Numarası"
   social_label: "Sosyal Medya"
-  email: "contact@weareoneintyouth.org"
-  phone: "+905938492929"
+  email: "weareoneintyouth@gmail.com"
+  phone: "+905510110599"
 ---
