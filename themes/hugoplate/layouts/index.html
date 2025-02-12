@@ -1,34 +1,41 @@
 {{ define "main" }}
+  <!-- Add gradient text style -->
+  <style>
+    .gradient-text {
+      background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+
   <!-- Banner -->
   {{ with .Params.banner }}
     <section
-      class="section relative flex justify-center items-center pt-14 bg-center bg-cover h-screen"
+      class="section relative flex justify-center items-center pt-14 bg-center bg-cover h-screen bg-fixed"
       style="background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ (resources.Get .image ).RelPermalink }}')">
       <div class="container">
         <div class="row justify-center">
-          <div class="lg:col-7 md:col-9 mb-8 text-center">
-            <h1 class="mb-4 text-h3 lg:text-h1 text-white">
+          <div class="lg:col-7 md:col-9 mb-8 text-center space-y-8">
+            <h1
+              class="mb-4 text-4xl md:text-6xl font-bold text-white animate-fade-in-up">
               {{ .title | markdownify }}
             </h1>
-
-            <h3 class="mb-4 text-h3 lg:text-h3 text-white">
+            <h3
+              class="text-xl md:text-2xl text-white font-light opacity-90 animate-fade-in-up delay-100">
               {{ .subtitle | markdownify }}
             </h3>
-
-            <h6 class="mb-8 text-h6 lg:text-h6 text-white">
-              {{ .content | markdownify }}
-            </h6>
-
             {{ with .button }}
               {{ if .enable }}
                 <a
-                  class="btn btn-primary"
+                  class="btn bg-gradient-to-br from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-gradient-to-bl hover:from-purple-600 hover:to-blue-600"
                   href="{{ .link | absURL }}"
                   {{ if strings.HasPrefix .link `http` }}
                     target="_blank" rel="noopener"
                   {{ end }}>
                   {{ .label }}
-                  <i class="fa fa-arrow-down pl-2"></i>
+                  <i
+                    class="fas fa-arrow-right pl-2 transition-transform group-hover:translate-x-1"></i>
                 </a>
               {{ end }}
             {{ end }}
@@ -37,24 +44,28 @@
       </div>
     </section>
   {{ end }}
-  <!-- /Banner -->
 
-  <!-- About -->
+
+  <!-- About - Reduced padding -->
   {{ with .Params.about }}
-    <section class="section-sm bg-gradient mt-8 py-2" id="about">
-      <div class="container">
-        <div class="row items-center justify-between">
-          <div class="mb:md-0 md:col-5 mb-6">
-            <!--
-            {{ partial "image" (dict "Src" .image "Alt" "feature image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
-            -->
-            <img src="{{ .image }}" alt="who are we image" class="rounded-lg" />
+    <section class="section py-16 bg-white" id="about">
+      <div class="container max-w-6xl">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+          <div class="w-full lg:w-1/2 relative group">
+            <div
+              class="rounded-xl overflow-hidden transform transition-all duration-500 hover:rotate-1 hover:shadow-2xl">
+              <img
+                src="{{ .image }}"
+                alt="About us"
+                class="w-full h-auto object-cover" />
+            </div>
           </div>
-          <div class="md:col-7 lg:col-6">
-            <h2 class="mb-4">
+          <div class="w-full lg:w-1/2">
+            <h2
+              class="text-3xl md:text-4xl font-bold mb-6 gradient-text text-center">
               {{ .title | markdownify }}
             </h2>
-            <p class="mb-8 text-lg text-justify">
+            <p class="text-lg text-gray-600 leading-relaxed">
               {{ .content | markdownify }}
             </p>
           </div>
@@ -62,29 +73,47 @@
       </div>
     </section>
   {{ end }}
-  <!-- /About -->
 
-  <!-- Mission And Vision -->
 
+  <!-- Mission & Vision - Modern grid layout -->
   {{ with .Params.missionvision }}
-
-    <section class="section py-4">
-      <div
-        class="container flex flex-col xl:flex-row lg:flex-row md:flex-col sm:flex-col gap-4">
-        <div
-          class="bg-theme-light basis-1/2 rounded-lg px-4 pb-10 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-          <div class="mt-11 flex flex-col items-center">
-            <h2 class="text-white">{{ .mission_title }}</h2>
-            <p class="text-white text-justify">
+    <section class="section py-16 bg-gradient-to-br from-blue-50 to-purple-50">
+      <div class="container max-w-6xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-8 border-blue-600">
+            <div class="flex items-center mb-6">
+              <div
+                class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                <i class="fas fa-bullseye text-blue-600 text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold">
+                <span class="gradient-text"
+                  >{{ replace .mission_title "🎯" "" }}</span
+                >
+                🎯
+              </h3>
+            </div>
+            <p class="text-gray-600 leading-relaxed">
               {{ .mission | markdownify }}
             </p>
           </div>
-        </div>
-        <div
-          class="bg-theme-light basis-1/2 rounded-lg px-4 pb-10 bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
-          <div class="mt-11 flex flex-col items-center">
-            <h2 class="text-white">{{ .vision_title }}</h2>
-            <p class="text-white text-justify">
+
+          <div
+            class="p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-8 border-purple-600">
+            <div class="flex items-center mb-6">
+              <div
+                class="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                <i class="fas fa-eye text-purple-600 text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold">
+                <span class="gradient-text"
+                  >{{ replace .vision_title "🚀" "" }}</span
+                >
+                🚀
+              </h3>
+            </div>
+            <p class="text-gray-600 leading-relaxed">
               {{ .vision | markdownify }}
             </p>
           </div>
@@ -92,124 +121,80 @@
       </div>
     </section>
   {{ end }}
-  <!-- /Mission And Vision -->
 
-  <!-- Projects -->
-  <section class="section py-4 px-4" id="projects">
-    <div class="container">
-      <div class="row">
-        <div class="flex flex-col md:col-12 lg:col-12 xl:col-12 mx-auto mb-12">
-          <!-- Title and Description from _index.md -->
-          <h2 class="mb-4 self-center">{{ .Params.projects_title }}</h2>
-          <p class="self-center">{{ .Params.projects_description }}</p>
 
-          <div class="flex flex-col xl:flex-row lg:flex-row my-4 gap-4">
-            <!-- Cultural Exchange Programs -->
-            <div
-              class="bg-theme-light basis-1/3 rounded-lg px-4 py-4 pb-10 bg-gradient-to-r from-blue-800 via-blue-500 to-blue-400">
-              <h3 class="text-white">{{ .Params.cultural_exchange_title }}</h3>
-              <ul class="list-disc ml-8 text-white">
-                {{ range .Params.cultural_exchange_items }}
-                  <li>{{ . }}</li>
-                {{ end }}
-              </ul>
-            </div>
+  <!-- Projects - White titles -->
+  <section class="section py-20 bg-white" id="projects">
+    <div class="container max-w-6xl">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4 gradient-text">
+          {{ .Params.projects_title }}
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          {{ .Params.projects_description }}
+        </p>
+      </div>
 
-            <!-- Youth Development Initiatives -->
-            <div
-              class="bg-theme-light basis-1/3 rounded-lg px-4 py-4 pb-10 bg-gradient-to-r from-blue-800 via-blue-500 to-blue-400">
-              <h3 class="text-white">{{ .Params.youth_development_title }}</h3>
-              <ul class="list-disc ml-8 text-white">
-                {{ range .Params.youth_development_items }}
-                  <li>{{ . }}</li>
-                {{ end }}
-              </ul>
-            </div>
-
-            <!-- Social Responsibility Projects -->
-            <div
-              class="bg-theme-light basis-1/3 rounded-lg px-4 py-4 pb-10 bg-gradient-to-r from-blue-800 via-blue-500 to-blue-400">
-              <h3 class="text-white">
-                {{ .Params.social_responsibility_title }}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Cultural Exchange -->
+        <div
+          class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden h-full">
+          <div
+            class="bg-gradient-to-br from-blue-600 to-purple-600 text-white p-6 h-full relative">
+            <div class="relative z-10 h-full flex flex-col">
+              <i class="fas fa-globe text-4xl mb-4"></i>
+              <h3 class="text-xl font-bold mb-4 text-white">
+                {{ .Params.cultural_exchange_title }}
               </h3>
-              <ul class="list-disc ml-8 text-white">
-                {{ range .Params.social_responsibility_items }}
-                  <li>{{ . }}</li>
+              <ul class="space-y-3 flex-grow">
+                {{ range .Params.cultural_exchange_items }}
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    {{ . }}
+                  </li>
                 {{ end }}
               </ul>
             </div>
           </div>
-          <a
-            href="{{ .Params.gallery_link }}"
-            class="btn btn-outline-primary self-center mt-8"
-            target="_blank">
-            {{ .Params.gallery_button }}
-          </a>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- /Projects -->
-
-  <!-- Join Us -->
-  <section class="section py-4 px-4" id="join">
-    <div class="container">
-      <div class="row">
-        <div class="flex flex-col md:col-10 lg:col-8 xl:col-6 mx-auto mb-12">
-          <!-- Title and Description from _index.md -->
-          <h2 class="mb-4 text-center">{{ .Params.join_us_title }}</h2>
-          <p>{{ .Params.join_us_description }}</p>
-
-          <ul class="list-disc my-4">
-            {{ range .Params.join_us_benefits }}
-              <li>{{ . }}</li>
-            {{ end }}
-          </ul>
-
-          <a
-            href="https://forms.gle/dzPZ8sxPUczZe12P7"
-            class="btn btn-outline-primary self-center"
-            target="_blank">
-            {{ .Params.join_us_button }}
-          </a>
+        <!-- Youth Development -->
+        <div
+          class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden h-full">
+          <div
+            class="bg-gradient-to-br from-blue-600 to-purple-600 text-white p-6 h-full relative">
+            <div class="relative z-10 h-full flex flex-col">
+              <i class="fas fa-users text-4xl mb-4"></i>
+              <h3 class="text-xl font-bold mb-4 text-white">
+                {{ .Params.youth_development_title }}
+              </h3>
+              <ul class="space-y-3 flex-grow">
+                {{ range .Params.youth_development_items }}
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    {{ . }}
+                  </li>
+                {{ end }}
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <!-- /Join Us -->
 
-  {{ with .Params.contact }}
-    <section class="flex flex-col section py-0" id="contact">
-      <!-- Title from _index.md -->
-      <h2 class="mb-4 text-center">{{ .title }}</h2>
-      <div
-        class="container flex flex-col xl:flex-row lg:flex-row md:flex-col sm:flex-col content-center justify-center">
-        <div class="bg-theme-light rounded-lg px-24 pb-10">
-          <div class="mt-11 flex flex-col items-center">
-            <h2 class="text-dark">{{ .info_title }}</h2>
-            <h4 class="my-4">{{ .email_label }}</h4>
-            <a href="mailto:{{ .email }}" class="text-primary hover:underline"
-              >{{ .email }}</a
-            >
-
-            <h4 class="my-4">{{ .phone_label }}</h4>
-            <a href="tel:{{ .phone }}" class="text-primary hover:underline"
-              >{{ .phone }}</a
-            >
-
-            <h4 class="my-4">{{ .social_label }}</h4>
-            <div class="socials flex flex-row">
-              <ul class="social-icons">
-                {{ range site.Data.social.main }}
-                  <li>
-                    <a
-                      target="_blank"
-                      aria-label="{{ .name }}"
-                      rel="nofollow noopener"
-                      href="{{ .link | safeURL }}">
-                      <i class="{{ .icon }}"></i>
-                    </a>
+        <!-- Social Responsibility -->
+        <div
+          class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden h-full">
+          <div
+            class="bg-gradient-to-br from-blue-600 to-purple-600 text-white p-6 h-full relative">
+            <div class="relative z-10 h-full flex flex-col">
+              <i class="fas fa-hands-helping text-4xl mb-4"></i>
+              <h3 class="text-xl font-bold mb-4 text-white">
+                {{ .Params.social_responsibility_title }}
+              </h3>
+              <ul class="space-y-3 flex-grow">
+                {{ range .Params.social_responsibility_items }}
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    {{ . }}
                   </li>
                 {{ end }}
               </ul>
@@ -217,7 +202,100 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Join Us - Enhanced icon padding -->
+  <section
+    class="section py-20 bg-gradient-to-r from-blue-600 to-purple-600"
+    id="join">
+    <div class="container max-w-4xl">
+      <div class="text-center text-white mb-12">
+        <h2 class="text-4xl font-bold mb-4 text-white">
+          {{ .Params.join_us_title }}
+        </h2>
+        <p class="text-xl opacity-90">{{ .Params.join_us_description }}</p>
+      </div>
+
+      <div
+        class="bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl p-8 border border-white/20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          {{ range $index, $benefit := .Params.join_us_benefits }}
+            <div
+              class="p-6 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300">
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-blue-600 text-2xl p-3">
+                  <i
+                    class="fas fa-{{ cond (eq $index 0) "star" (cond (eq $index 1) "users" (cond (eq $index 2) "gem" "rocket")) }}"></i>
+                </div>
+                <span class="text-white text-lg">{{ $benefit }}</span>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+
+        <div class="text-center">
+          <a
+            href="https://forms.gle/dzPZ8sxPUczZe12P7"
+            class="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-full hover:bg-gray-100 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl">
+            {{ .Params.join_us_button }}
+            <i class="fas fa-arrow-right ml-3 animate-pulse"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  {{ with .Params.contact }}
+    <section class="section py-20 bg-gray-50" id="contact">
+      <div class="container max-w-4xl">
+        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+          <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+            {{ .title }}
+          </h2>
+          <div class="text-center space-y-8">
+            <div class="space-y-6">
+              <div>
+                <h4 class="text-gray-600 font-semibold mb-2">
+                  {{ .email_label }}
+                </h4>
+                <a
+                  href="mailto:{{ .email }}"
+                  class="text-blue-600 hover:text-purple-600 text-lg">
+                  {{ .email }}
+                </a>
+              </div>
+              <div>
+                <h4 class="text-gray-600 font-semibold mb-2">
+                  {{ .phone_label }}
+                </h4>
+                <a
+                  href="tel:{{ .phone }}"
+                  class="text-blue-600 hover:text-purple-600 text-lg">
+                  {{ .phone }}
+                </a>
+              </div>
+              <div>
+                <h4 class="text-gray-600 font-semibold mb-4">
+                  {{ .social_label }}
+                </h4>
+                <div class="flex justify-center space-x-4">
+                  {{ range site.Data.social.main }}
+                    <a
+                      href="{{ .link | safeURL }}"
+                      target="_blank"
+                      class="w-12 h-12 rounded-full bg-blue-600 hover:bg-purple-600 text-white flex items-center justify-center transition-all duration-300 hover:-translate-y-1">
+                      <i class="{{ .icon }} text-xl"></i>
+                    </a>
+                  {{ end }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   {{ end }}
-
 {{ end }}

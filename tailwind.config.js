@@ -30,7 +30,7 @@ if (theme.fonts.font_family.secondary) {
 module.exports = {
   content: ["./hugo_stats.json"],
   safelist: [{ pattern: /^swiper-/ }],
-  
+
   theme: {
     screens: {
       sm: "540px",
@@ -44,6 +44,15 @@ module.exports = {
       padding: "2rem",
     },
     extend: {
+      animation: {
+        'fade-in-up': 'fadeInUp 0.5s ease-out',
+      },
+      keyframes: {
+        fadeInUp: {
+          '0%': { opacity: 0, transform: 'translateY(20px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
+      },
       colors: {
         text: theme.colors.default.text_color.default,
         light: theme.colors.default.text_color.light,
@@ -54,7 +63,7 @@ module.exports = {
         border: theme.colors.default.theme_color.border,
         "theme-light": theme.colors.default.theme_color.theme_light,
         "theme-dark": theme.colors.default.theme_color.theme_dark,
-        
+
       },
       fontSize: {
         base: font_base + "px",
