@@ -23,6 +23,64 @@ missionvision:
   vision_title: "Vizyonumuz 🚀"
   vision: "Vizyonumuz, kültürlerarası diyaloğu, hoşgörüyü ve dayanışmayı teşvik eden küresel bir gençlik hareketi yaratmaktır. Barış, sürdürülebilir kalkınma savunucuları yetiştirmeyi ve topluma aktif olarak katkıda bulunmalarını sağlamayı amaçlıyoruz."
 
+# Committees
+committees_title: "Komitelerimiz"
+committees_description: "Belirli hedefler doğrultusunda çalışan özel ekipler"
+committees:
+  - title: "Kültürel Değişim Komitesi"
+    content: "Kültürel Değişim Komitesi olarak, dünyanın farklı kültürlerini tanıtmak ve bireyleri kültürel çeşitlilikle buluşturmak için çalışıyoruz. İlkokul, ortaokul, lise ve üniversite öğrencilerine yönelik düzenlediğimiz ziyaretlerle, farklı kültürlerin zenginliklerini paylaşarak kültürel farkındalık oluşturuyoruz. Amacımız, gençlere yeni perspektifler kazandırmak ve dünya vatandaşlığı bilincini aşılamaktır."
+    images:
+      [
+        "/images/committees/1/1.jpeg",
+        "/images/committees/1/2.jpeg",
+        "/images/committees/1/3.jpeg",
+      ]
+
+  - title: "Sosyal Destek Komitesi"
+    content: "Biz Biriz Uluslararası Gençlik Topluluğu'nun Sosyal Destek Komitesi olarak, gençlerin sosyal sorumluluk bilinciyle topluma katkı sağlamalarını teşvik ediyoruz. Amacımız: Toplumun dezavantajlı kesimlerine yardım eli uzatarak yaşamlarını kolaylaştırmak ve gönüllülük ruhunu yaygınlaştırmaktır."
+    images:
+      [
+        "/images/committees/2/1.jpeg",
+        "/images/committees/2/2.jpeg",
+        "/images/committees/2/3.jpeg",
+      ]
+
+  - title: "Doğa ve Hayvan Komitesi"
+    content: "Doğa ve Hayvan Komitesi olarak, doğayı ve hayvanları koruma bilincini yaygınlaştırmayı hedefliyoruz. Eğitici ve eğlenceli etkinliklerle, üniversite öğrencilerini ve toplumun diğer kesimlerini bu konuda bilinçlendirmek için çalışıyoruz."
+    images:
+      [
+        "/images/committees/3/1.jpeg",
+        "/images/committees/3/2.jpeg",
+        "/images/committees/3/3.jpeg",
+      ]
+
+  - title: "Aktif Yaşam Komitesi"
+    content: "Aktif Yaşam Komitesi, toplumun fiziksel ve zihinsel sağlığını artırmayı ve katılımcılara aktif bir yaşam tarzı benimsemeleri için ilham vermeyi amaçlar. Amacımız: Spor, zeka oyunları, dans gibi etkinliklerle bireylerin yaşam kalitesini yükseltmek ve sağlıklı yaşamı teşvik eden bir platform oluşturmaktır."
+    images:
+      [
+        "/images/committees/4/1.jpeg",
+        "/images/committees/4/2.jpeg",
+        "/images/committees/4/3.jpeg",
+      ]
+
+  - title: "Diplomatik Ekip"
+    content: "Diplomatik Ekip, gençlere uluslararası diplomasi ve güncel dünya gündemi hakkında bilgi kazandırmayı hedefler. Amacımız: Gençlerin dünya meselelerine hakim olmalarını sağlamak ve diplomasi konularında farkındalık kazandırmaktır."
+    images:
+      [
+        "/images/committees/5/1.jpeg",
+        "/images/committees/5/2.jpeg",
+        "/images/committees/5/3.jpeg",
+      ]
+
+  - title: "Medya Komitesi"
+    content: "Medya Komitesi, kültürel değişim yaratmak ve çeşitli kültürel bilgileri medya aracılığıyla yaymak için çalışır. Amacımız: Farklı kültürlere dair farkındalık oluşturmak ve bu bilgileri yaratıcı medya içerikleriyle geniş kitlelere ulaştırmaktır."
+    images:
+      [
+        "/images/committees/6/1.jpeg",
+        "/images/committees/6/2.jpeg",
+        "/images/committees/6/3.jpeg",
+      ]
+
 # Projects
 projects_title: "Projelerimiz"
 projects_description: "Gençlerin topluma ve çevreye katkıda bulunmalarını sağlayan çeşitli projelere öncülük ediyoruz."
@@ -57,6 +115,7 @@ join_us_benefits:
   - "Yeni kültürler keşfedin ve dünya görüşünüzü genişletin 🌍"
   - "Sosyal sorumluluk projelerine katılın ve topluma olumlu bir katkı yapın 🤝"
   - "Liderlik becerilerinizi geliştirin ve dünyanın gelecekteki liderlerinden biri olun 🌟"
+  - "Küresel bir tutkulu gençlik ağıyla iş birliği yapın ve etkili çözümleri birlikte oluşturun 🌐"
 join_us_button: "Hemen Katıl"
 
 # Contact

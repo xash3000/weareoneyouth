@@ -2,11 +2,26 @@
   <div class="border-border  border-t py-7">
     <div class="text-light container text-center">
       <p>
-        © 2024 We Are One International Youth Platform. All rights reserved.
+        © <span id="copyright-year"></span> We Are One International Youth
+        Platform. All rights reserved.
       </p>
       <p>
-        Website designed and developed by <a href="https://aliabdelrahman.me/" class="text-primary hover:underline" target="_blank">Ali Abdelrahman</a>
+        Website designed and developed by
+        <a
+          href="https://aliabdelrahman.me/"
+          class="text-primary hover:underline"
+          target="_blank"
+          >Ali Abdelrahman</a
+        >
       </p>
     </div>
   </div>
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const yearSpan = document.getElementById("copyright-year");
+    const currentYear = new Date().getFullYear();
+    yearSpan.textContent = currentYear;
+  });
+</script>

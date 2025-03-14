@@ -125,7 +125,7 @@
 
   <!-- Projects - White titles -->
   <section class="section py-20 bg-white" id="projects">
-    <div class="container max-w-6xl">
+    <div class="container max-w-6xl flex flex-col justify-center">
       <div class="text-center mb-16">
         <h2 class="text-4xl font-bold mb-4 gradient-text">
           {{ .Params.projects_title }}
@@ -202,8 +202,98 @@
           </div>
         </div>
       </div>
+      <a
+        href="{{ .Params.gallery_link }}"
+        class="btn text-white self-center mt-8 bg-gradient-to-br from-blue-600 to-purple-600"
+        target="_blank">
+        {{ .Params.gallery_button }}
+      </a>
     </div>
   </section>
+
+  <!-- Committees Section -->
+  <section class="section py-20 bg-gray-50" id="committees">
+    <div class="container max-w-6xl">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4 gradient-text">
+          {{ .Params.committees_title }}
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          {{ .Params.committees_description }}
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-12">
+        {{ range .Params.committees }}
+          <div
+            class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+            <div class="grid grid-cols-3 gap-4 p-4 bg-gray-100">
+              {{ range .images }}
+                <div
+                  class="group relative aspect-video overflow-hidden rounded-lg cursor-zoom-in"
+                  onclick="openLightbox('{{ . }}')">
+                  <img
+                    src="{{ . }}"
+                    alt=""
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy" />
+                </div>
+              {{ end }}
+            </div>
+            <div class="p-8">
+              <h3 class="text-2xl font-bold mb-4 gradient-text">
+                {{ .title }}
+              </h3>
+              <div class="prose max-w-none text-gray-600">
+                {{ .content | markdownify }}
+              </div>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div
+    id="lightbox"
+    class="hidden fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4">
+    <div class="relative max-w-4xl w-full">
+      <button
+        onclick="closeLightbox()"
+        class="absolute -top-8 right-0 text-white hover:text-gray-300 text-4xl">
+        &times;
+      </button>
+      <img
+        id="lightbox-img"
+        class="w-full h-auto max-h-[80vh] object-contain rounded-lg" />
+    </div>
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      const lightbox = document.getElementById("lightbox");
+      const img = document.getElementById("lightbox-img");
+      img.src = src;
+      lightbox.classList.remove("hidden");
+      document.body.classList.add("overflow-hidden");
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").classList.add("hidden");
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    // Close lightbox on outside click
+    document.getElementById("lightbox").addEventListener("click", (e) => {
+      if (e.target.id === "lightbox") closeLightbox();
+    });
+
+    // Close on ESC key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+    });
+  </script>
 
   <!-- Join Us - Enhanced icon padding -->
   <section
